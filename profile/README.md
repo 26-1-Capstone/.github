@@ -1,7 +1,7 @@
 ## 🎬 시연 동영상(수정)
 
 - <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" width="18"/> 
-  [안드로이드 시연 영상]((https://youtu.be/C0NuPAS2HsM)](https://youtube.com/shorts/nsMjESt-zVo))
+  [안드로이드 시연 영상](https://youtube.com/shorts/nsMjESt-zVo?feature=share)
 
 - [<img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" width="18"/> 
   아이폰 시연 영상 보기](https://youtu.be/Mm-R8tdzca0)
