@@ -58,7 +58,7 @@
 ## 📱 App 설치
 
 [🔗 안드로이드]
-[🔗 아이폰]
+[🔗 아이폰](https://testflight.apple.com/join/pY1SpQJf)
 
 
 
