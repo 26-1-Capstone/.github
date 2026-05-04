@@ -38,13 +38,8 @@ NutriShare는 생필품 등 상품을 **공동구매**로 모집하고, **장바
 
 | 구분 | URL / 설명 |
 |------|------------|
-| **운영 API (백엔드)** | Base URL: `http://3.36.139.67`，REST 프리픽스: `/api/v1` |
-| **OAuth 로그인 시작** | `http://3.36.139.67/oauth2/authorization/{kakao\|google}` |
-| **웹(React) 배포** | 루트 `vercel.json`으로 `/api/*`를 백엔드로 프록시 — Vercel 배포 도메인이 웹 주소 |
-| **로컬 개발** | `npm install` → `npm run dev` (환경변수 `VITE_API_BASE_URL` 등 참고) |
-
-**웹 주요 라우트:**  
-`/login` `/login/callback` `/` `/search` `/products/:id` `/groups` `/groups/:id` `/groups/new` `/cart` `/checkout` `/orders/:id/complete` `/mypage` `/mypage/edit`
+ | **웹(React) 배포** | https://react-navy-xi.vercel.app/ |
+| **앱** | [Android](#) \| [iOS TestFlight](#) |
 
 ---
 
@@ -87,6 +82,8 @@ flowchart LR
   MYP --> MYSQL
   CAT --> S3
 ```
+<img width="640" height="601" alt="image" src="https://github.com/user-attachments/assets/0a4a5507-e5e1-4f99-a54a-e7d963299e0d" />
+
 
 ### 사용자 기능 흐름
 
@@ -177,10 +174,10 @@ flowchart LR
 
 | 저장소 | 링크 |
 |--------|------|
-| 백엔드 | [Backend](#) |
-| 리액트(웹) | [web](#) |
-| Android | [android](#) |
-| iOS | [mobile](#) |
+| 백엔드 | [Backend](https://github.com/26-1-Capstone/Spring) |
+| 리액트(웹) | [web](https://github.com/26-1-Capstone/React) |
+| Android | [android](https://github.com/26-1-Capstone/Android) |
+| iOS | [mobile](https://github.com/26-1-Capstone/IOS) |
 
 ---
 
@@ -222,10 +219,10 @@ flowchart LR
 
 | 역할 | 이름 | GitHub |
 |------|------|--------|
-| 백엔드 | 김준호 | [GitHub](#) |
-| 웹 프론트엔드 | 박성훈 | [GitHub](#) |
-| Android | 신한석 | [GitHub](#) |
-| iOS | 최용주 | [GitHub](#) |
+| 백엔드 | 김준호 | [GitHub](https://github.com/kjhh2605) |
+| 웹 프론트엔드 | 박성훈 | [GitHub](https://github.com/parkseonghun598) |
+| Android | 신한석 | [GitHub](https://github.com/0Whitebird0) |
+| iOS | 최용주 | [GitHub](https://github.com/YJEND) |
 
 ---
 
