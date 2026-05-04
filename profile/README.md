@@ -10,10 +10,10 @@
 
 - <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" width="18"/> 
   [리액트(PC) 시연 영상](영상링크)
+
 <div align="center">
 
 # 📚 NutriShare - 공동구매 쇼핑몰 프로젝트
-
 
 </div>
 
@@ -31,62 +31,67 @@
 
 ## 🎯 프로젝트 소개
 
+NutriShare는 생필품 등 상품을 **공동구매**로 모집하고, **장바구니·주문·결제·마이페이지**까지 이어지는 흐름을 제공하는 쇼핑/공구 서비스입니다. 웹(React)과 모바일 앱이 동일한 백엔드 API(`api/v1`)를 사용하는 구조입니다.
 
 ### 핵심 기능
-- 공동구매 
-- 장바구니 담기 및 주문/결제 시스템
-- 리뷰 작성 및 조회
-- JWT 기반 사용자 인증 (회원가입/로그인/로그아웃)
-- 관리자 물품 등록/삭제 및 이미지 관리 (AWS S3)
-- **Android, iOS, 데스크탑** 모두에서 사용 가능 – 크로스플랫폼 지원
+
+- 공동구매 모집·참여·목록/상세 조회
+- 장바구니 담기 및 주문/결제 시스템(시뮬레이션 결제 플로우)
+- 공동구매 참여 기준 리뷰 작성 및 조회
+- JWT 기반 사용자 인증(액세스 토큰 + 리프레시 재발급), 카카오·구글 OAuth 로그인
+- 관리자 물품 등록/삭제 및 이미지 관리(AWS S3) — **백엔드/API 상세는 저장소 기준**
+- **Android, iOS, 데스크탑(웹)** 에서 이용 가능한 크로스플랫폼 구성
 
 ## 🏠 홈페이지
 
+| 구분 | URL / 설명 |
+|------|------------|
+| **운영 API (백엔드)** | Base URL: `http://3.36.139.67`，REST 프리픽스: **`/api/v1`** (환경변수 `VITE_API_BASE_URL`와 동일 호스트) |
+| **OAuth 로그인 시작** | 백엔드 호스트 기준 `http://3.36.139.67/oauth2/authorization/{kakao\|google}` (프론트 `LoginPage`에서 동일 호스트로 조합) |
+| **웹(React) 배포** | 프로젝트 루트 `vercel.json`에서 `/api/*`를 위 백엔드로 프록시하도록 설정되어 있음 → **Vercel에 연결된 실제 도메인**이 웹 주소(배포 후 대시보드에서 확인). 저장소에는 고정 도메인 문자열이 없음 |
+| **로컬 개발** | 저장소 루트에서 `npm install` 후 `npm run dev` (Vite). API는 `.env`의 `VITE_API_BASE_URL` 또는 프록시 설정에 맞출 것 |
+
+**웹 주요 화면(라우트)**  
+로그인 `/login`, OAuth 콜백 `/login/callback`, 홈 `/`, 검색 `/search`, 상품 상세 `/products/:id`, 공구 목록·상세 `/groups`, `/groups/:id`, 공구 생성 `/groups/new`(로그인 필요), 장바구니 `/cart`, 결제 `/checkout`, 주문 완료 `/orders/:id/complete`, 마이페이지 `/mypage`, 프로필 수정 `/mypage/edit`.
 
 ## 📌 기능 구성도
 
+### 시스템 관점
 
+```mermaid
+flowchart LR
+  subgraph client["클라이언트"]
+    WEB["React 웹\n(Vite)"]
+    AND["Android 앱"]
+    IOS["iOS 앱"]
+  end
 
+  subgraph api["Spring Boot\nNutriShare API"]
+    AUTH["인증·회원\nJWT / OAuth2"]
+    CAT["상품·검색"]
+    GB["공동구매"]
+    CART["장바구니"]
+    ORD["주문"]
+    PAY["결제 확정"]
+    MYP["마이페이지·리뷰"]
+  end
 
-## 💻 코드
+  subgraph data["데이터·외부"]
+    MYSQL[("MySQL")]
+    REDIS[("Redis")]
+    S3["AWS S3\n(상품 이미지 등)"]
+    OAUTH["Kakao / Google"]
+  end
 
-[🔗 백엔드](https://github.com/2026-2-web-capstone/Backend)
-[🔗 리액트](https://github.com/2026-2-web-capstone/web)
-[🔗 안드로이드](https://github.com/2026-2-web-capstone/android)
-[🔗 아이폰](https://github.com/2026-2-web-capstone/mobile)
-
-## 📱 App 설치
-
-[🔗 안드로이드]
-[🔗 아이폰](https://testflight.apple.com/join/pY1SpQJf)
-
-
-
-## 🏆 작년 우수팀과의 비교표
-
-| 항목 | BookStore | 최우수 | 우수1 | 우수2 | 우수3 |
-|------|-----------|--------|-------|-------|-------|
-| Code | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Doc | ✅ | ✅ | ✅ | ❌ | ✅ |
-| 영상 | ✅ | ✅ | ✅ | ❌ | ✅ |
-| 화면 | W, A, I | R | R | R | R |
-| AppStore/GooglePlay | ✅ | ❌ | ❌ | ❌ | ❌ |
-
-최우수 : 황치즈 https://github.com/HwangCheese/VideoSummary<br>
-우수1 : 황금토끼 https://github.com/GolddBunny/Domain_QA_Gen<br>
-우수2 : 초신성 https://github.com/kola0709/2025Capstone/tree/master (작품설명 없음)<br>
-우수3 : Prism https://github.com/hsu-capstone-prism/DamSeol
-
-## 👥 팀원 소개
-
-<!-- 팀원 정보를 아래 표에 입력하세요 -->
-| 역할 | 이름 | GitHub |
-|------|------|--------|
-| 백엔드 | 김준호 ||
-| 웹 프론트엔드 | 박성훈 | |
-| Android | 신한석 ||
-| iOS | 최용주 | |
-
-<div align="center">
-Copyright © 2026 BookStore. All rights reserved.
-</div>
+  WEB --> api
+  AND --> api
+  IOS --> api
+  AUTH --> OAUTH
+  AUTH --> REDIS
+  CAT --> MYSQL
+  GB --> MYSQL
+  CART --> MYSQL
+  ORD --> MYSQL
+  PAY --> MYSQL
+  MYP --> MYSQL
+  CAT --> S3
