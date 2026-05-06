@@ -200,7 +200,7 @@ flowchart LR
 
 - 📹 안드로이드 시연 영상
 - [📹 아이폰 시연 영상] (https://youtu.be/Mm-R8tdzca0)
-- 📹 리액트(PC) 시연 영상
+- 📹 리액트(PC) 시연 영상 (https://www.youtube.com/watch?v=_P4TziFBocU))
 
 ---
 
