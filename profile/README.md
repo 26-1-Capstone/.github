@@ -45,6 +45,8 @@ NutriShare는 생필품 등 상품을 **공동구매**로 모집하고, **장바
 
 ## 📌 기능 구성도
 <details>
+ <summary>🔍 펼치기</summary>
+ 
 ### 시스템 관점
 
 ```mermaid
@@ -103,10 +105,13 @@ flowchart LR
 마이페이지 (주문·참여·리뷰)
 ```
 
----
 </details>
+---
+
 ## 📌 API 명세서
 <details>
+ <summary>🔍 펼치기</summary>
+ 
 ### 공통
 
 | 항목 | 내용 |
@@ -167,9 +172,10 @@ flowchart LR
 | POST | `/payments/confirm` | 결제 확정 |
 
 > 관리자·S3 등 웹에서 호출하지 않는 API는 백엔드 저장소·Swagger 기준으로 확인.
+</details>
 
 ---
-</details>
+
 ## 💻 코드
 
 | 저장소 | 링크 |
