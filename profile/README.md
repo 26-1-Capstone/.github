@@ -242,6 +242,4 @@ Copyright © 2026 NutriShare. All rights reserved.
 <details>
  <summary>사진</summary>
 
-<img width="2252" height="4000" alt="KakaoTalk_20260609_104814692" src="https://github.com/user-attachments/assets/80268eb7-cfe5-47e5-acb5-e6739bf6ffbd" />
-
 </details>
